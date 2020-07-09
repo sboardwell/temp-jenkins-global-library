@@ -8,7 +8,7 @@ def call(body) {
     body()
 
     def timeoutTime = config.timeoutTime ?: 24
-    def proceedMessage = """Would you like to promote version ${config.version} to the next environment?"""
+    def proceedMessage = """Would you like to promote version ${config.version} to environment '${config.environment}'?"""
 
     try {
         timeout(time: timeoutTime, unit: 'HOURS') {
